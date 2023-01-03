@@ -35,5 +35,8 @@
   },
   "repository": {
     "url": "https://github.com/RaeesBhatti/cache-control-headers.git"
+  },
+  "dependencies": {
+    "case-shift": "^2.5.3"
   }
 }

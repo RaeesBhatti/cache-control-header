@@ -1,3 +1,5 @@
+import { camelToKebab } from 'case-shift';
+
 type NumericDuration = number;
 
 type Duration =
@@ -11,26 +13,27 @@ type Duration =
 
 // Directives for cache-control header
 type Directives = {
-  public?: boolean;
-  private?: boolean;
-  immutable?: boolean;
-  noCache?: boolean;
-  noStore?: boolean;
-  noTransform?: boolean;
-  proxyRevalidate?: boolean;
-  mustUnderstand?: boolean;
-  maxAge?: Duration;
-  sMaxAge?: Duration;
-  staleWhileRevalidate?: Duration;
-  staleIfError?: Duration;
+  public?: true;
+  private?: true;
+  immutable?: true;
+  noCache?: true;
+  noStore?: true;
+  noTransform?: true;
+  proxyRevalidate?: true;
+  mustUnderstand?: true;
+  maxAge?: false | Duration;
+  sMaxage?: false | Duration;
+  staleWhileRevalidate?: false | Duration;
+  staleIfError?: false | Duration;
 }
 export default function cacheControl(params: Directives): string {
-  const directives = Object.entries(params).map(([key, value]) => {
+  const directives = Object.entries(params).map(([directive, value]) => {
+    const key = camelToKebab(directive, false);
     if (value === true) {
       return key;
     }
     if (value === false) {
-      return undefined;
+      return `${key}=0`;
     }
     const parsedDuration = parseDuration(value);
     return `${key}=${parsedDuration}`;
