@@ -28,7 +28,7 @@ type Directives = {
     proxyRevalidate?: boolean;
     mustUnderstand?: boolean;
     maxAge?: false | Duration;
-    sMaxAge?: false | Duration;
+    sMaxage?: false | Duration;
     staleWhileRevalidate?: false | Duration;
     staleIfError?: false | Duration;
 };
