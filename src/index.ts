@@ -11,18 +11,18 @@ type Duration =
 
 // Directives for cache-control header
 type Directives = {
-  public: boolean;
-  private: boolean;
-  immutable: boolean;
-  noCache: boolean;
-  noStore: boolean;
-  noTransform: boolean;
-  proxyRevalidate: boolean;
-  mustUnderstand: boolean;
-  maxAge: Duration;
-  sMaxAge: Duration;
-  staleWhileRevalidate: Duration;
-  staleIfError: Duration;
+  public?: boolean;
+  private?: boolean;
+  immutable?: boolean;
+  noCache?: boolean;
+  noStore?: boolean;
+  noTransform?: boolean;
+  proxyRevalidate?: boolean;
+  mustUnderstand?: boolean;
+  maxAge?: Duration;
+  sMaxAge?: Duration;
+  staleWhileRevalidate?: Duration;
+  staleIfError?: Duration;
 }
 export default function cacheControl(params: Directives): string {
   const directives = Object.entries(params).map(([key, value]) => {
