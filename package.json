@@ -1,6 +1,6 @@
 {
   "name": "cache-control-header",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Utility function that outputs Cache-Control header string based on given parameters",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
