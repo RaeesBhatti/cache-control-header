@@ -1,4 +1,4 @@
-# cache-control-headers
+# cache-control-header
 Utility function that outputs Cache-Control header string based on given parameters
 
 ## Usage

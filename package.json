@@ -1,5 +1,5 @@
 {
-  "name": "cache-control-headers",
+  "name": "cache-control-header",
   "version": "0.4.0",
   "description": "Utility function that outputs Cache-Control header string based on given parameters",
   "scripts": {
