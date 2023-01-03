@@ -4,7 +4,7 @@
   "description": "Utility function that outputs Cache-Control header string based on given parameters",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc --project tsconfig.mjs.json && npx tsc --project tsconfig.cjs.json && npx tsc --declaration --emitDeclarationOnly"
+    "build": "tsc-multi"
   },
   "keywords": [
     "cache",
@@ -23,14 +23,15 @@
   "license": "MIT",
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/mjs/index.js",
-      "require": "./dist/cjs/index.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
   "main": "./dist/cjs/index.js",
   "types": "./dist/types/index.d.ts",
   "devDependencies": {
+    "tsc-multi": "^0.6.1",
     "typescript": "^4.9.4"
   },
   "repository": {
