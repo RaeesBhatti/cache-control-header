@@ -2,9 +2,22 @@
 Utility function that outputs Cache-Control header string based on given parameters
 
 ## Usage
+ESM import:
 ```ts
 import cacheControl from 'cache-control-header';
 
+// Outputs: max-age=86400, s-maxage=0, immutable, stale-while-revalidate=604800
+console.log(cacheControl({
+  maxAge: '1day',
+  sMaxage: false,
+  immutable: true,
+  staleWhileRevalidate: '1week',
+}));
+```
+
+CommonJS require:
+```js
+const {default: cacheControl} = require('cache-control-header');
 // Outputs: max-age=86400, s-maxage=0, immutable, stale-while-revalidate=604800
 console.log(cacheControl({
   maxAge: '1day',
