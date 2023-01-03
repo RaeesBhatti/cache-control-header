@@ -32,5 +32,8 @@
   "types": "./dist/types/index.d.ts",
   "devDependencies": {
     "typescript": "^4.9.4"
+  },
+  "repository": {
+    "url": "https://github.com/RaeesBhatti/cache-control-headers.git"
   }
 }
