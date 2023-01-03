@@ -19,18 +19,18 @@ console.log(cacheControl({
 type NumericDuration = number;
 type Duration = `${NumericDuration}sec` | `${NumericDuration}min` | `${NumericDuration}hr` | `${NumericDuration}day` | `${NumericDuration}week` | `${NumericDuration}mo` | `${NumericDuration}y`;
 type Directives = {
-    public?: boolean;
-    private?: boolean;
-    immutable?: boolean;
-    noCache?: boolean;
-    noStore?: boolean;
-    noTransform?: boolean;
-    proxyRevalidate?: boolean;
-    mustUnderstand?: boolean;
-    maxAge?: false | Duration;
-    sMaxage?: false | Duration;
-    staleWhileRevalidate?: false | Duration;
-    staleIfError?: false | Duration;
+  public?: true;
+  private?: true;
+  immutable?: true;
+  noCache?: true;
+  noStore?: true;
+  noTransform?: true;
+  proxyRevalidate?: true;
+  mustUnderstand?: true;
+  maxAge?: false | Duration;
+  sMaxage?: false | Duration;
+  staleWhileRevalidate?: false | Duration;
+  staleIfError?: false | Duration;
 };
 export default function cacheControl(params: Directives): string;
 ```
